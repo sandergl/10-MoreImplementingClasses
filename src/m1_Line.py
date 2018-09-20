@@ -15,7 +15,7 @@ import m1t_test_Line as m1t
 ########################################################################
 
 # ----------------------------------------------------------------------
-# TODO: 2. With your instructor, READ THE INSTRUCTIONS
+# DONE: 2. With your instructor, READ THE INSTRUCTIONS
 #   in file  m0_INSTRUCTIONS.txt, asking questions as needed.
 #   Once you understand the instructions, mark this TO DO as DONE.
 #
@@ -216,8 +216,10 @@ class Line(object):
           :type start: Point
           :type end:   Point
         """
+        self.start = start.clone()
+        self.end = end.clone()
         # --------------------------------------------------------------
-        # TODO: 3.
+        # DONE: 3.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -325,8 +327,10 @@ class Line(object):
         Type hints:
           :rtype: Line
         """
+        clone = Line(self.start, self.end)
+        return clone
         # --------------------------------------------------------------
-        # TODO: 4.
+        # DONE: 4.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -358,8 +362,15 @@ class Line(object):
             line1.reverse()
             print(line1 == line2)    # Should now print: True
         """
+        x = self.end
+        y = self.start
+        self.start = x
+        self.end = y
+        reverse = Line(self.start, self.end)
+        return reverse
+
         # --------------------------------------------------------------
-        # TODO: 5.
+        # DONE: 5.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -394,8 +405,12 @@ class Line(object):
         Type hints:
           :rtype: float
         """
+        if (self.end.x - self.start.x) == 0:
+            return math.inf
+        else:
+            return (self.end.y - self.start.y) / (self.end.x - self.start.x)
         # --------------------------------------------------------------
-        # TODO: 6.
+        # DONE: 6.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -427,8 +442,9 @@ class Line(object):
         Type hints:
           :rtype: float
         """
+        return self.start.distance_from(self.end)
         # --------------------------------------------------------------
-        # TODO: 7.
+        # DONE: 7.
         #   a. READ the above specification, including the Example.
         #        ** ASK QUESTIONS AS NEEDED. **
         #        ** Be sure you understand it, ESPECIALLY the Example.
@@ -467,6 +483,7 @@ class Line(object):
         Type hints:
           :rtype: int:
         """
+
         # --------------------------------------------------------------
         # TODO: 8.
         #   a. READ the above specification, including the Example.
