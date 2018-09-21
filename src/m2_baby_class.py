@@ -5,6 +5,30 @@ Authors: David Mutchler, Vibha Alangar, Dave Fisher, Amanda Stouder,
          their colleagues and Garrett Sanders.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+class Baby(object):
+    def __init__(self, name):
+        self.name = name
+        self.count = 0
+        name_str = 'Hello baby {}!'.format(self.name)
+        print(name_str)
+
+    def feed_baby(self):
+        self.count = 0
+        name_str = 'Thank you for feeding baby {}.'.format(self.name)
+        print(name_str)
+
+    def hour_passes(self):
+        name_str1 = 'Baby {} is sleeping.'.format(self.name)
+        name_str2 = 'Baby {} is awake. Time for food.'.format(self.name)
+        name_str3 = 'Baby {} is CRYING uncontrollably! Feed the baby!'.format(self.name)
+        if self.count == 0:
+            print(name_str1)
+        if self.count == 2:
+            print(name_str2)
+        if self.count >= 3:
+            print(name_str3)
+        self.count = self.count + 1
+
 
 def main():
     """
@@ -51,7 +75,7 @@ def main():
 #     What goes out:  Nothing (i.e., None).
 #     Side effects:
 #        -- Sets instance variables as needed
-#        -- Prints 'Hello baby <your baby's name>!'
+#        -- self.name
 #
 # feed_baby
 #     What comes in:
