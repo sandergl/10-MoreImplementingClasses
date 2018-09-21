@@ -23,9 +23,9 @@ class Baby(object):
         name_str3 = 'Baby {} is CRYING uncontrollably! Feed the baby!'.format(self.name)
         if self.count == 0:
             print(name_str1)
-        if self.count == 2:
+        elif self.count == 2:
             print(name_str2)
-        if self.count >= 3:
+        else:
             print(name_str3)
         self.count = self.count + 1
 
