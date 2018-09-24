@@ -5,6 +5,7 @@ Authors: David Mutchler, Vibha Alangar, Dave Fisher, Amanda Stouder,
          their colleagues and Garrett Sanders.
 """  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
+
 class Baby(object):
     def __init__(self, name):
         self.name = name
@@ -23,7 +24,7 @@ class Baby(object):
         name_str3 = 'Baby {} is CRYING uncontrollably! Feed the baby!'.format(self.name)
         if self.count == 0:
             print(name_str1)
-        elif self.count == 2:
+        elif self.count == 1:
             print(name_str2)
         else:
             print(name_str3)
